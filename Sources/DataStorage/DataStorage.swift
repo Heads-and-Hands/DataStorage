@@ -47,14 +47,12 @@ public final class DataStorage {
         case `internal`
     }
 
-    private lazy var userKeychainDomain = userKeychainConfig.keychainDomain
-
     private var internalKeychain: KeychainContainer {
         KeychainContainer(domain: Domains.internal.rawValue)
     }
 
     private var userKeychain: KeychainContainer {
-        KeychainContainer(domain: userKeychainDomain)
+        KeychainContainer(domain: userKeychainConfig.keychainDomain)
     }
 
     private var userKeychainConfig: KeychainConfiguration {
